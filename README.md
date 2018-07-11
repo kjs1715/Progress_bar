@@ -1,2 +1,2 @@
 # Progress_bar
-17-18 Summer semester of Software Engineering
+HW3 for 17-18 Summer semester of Software Engineering
