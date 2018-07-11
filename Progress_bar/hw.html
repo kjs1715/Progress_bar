@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="hw.css">
+<script src="hw.js"></script>
+
+<div id="progress-bar1"></div>
+<div id="progress-bar2"></div>
+<div id="progress-bar3"></div>
+<div id="progress-bar4"></div>
+<div id="progress-bar5"></div>
+<div id="truth" style="display: none;">（不存在的）</div>
+
+<script>
+  let progress_bar1 = new ProgressBar({
+    'type': 'ring',
+    'container': '#progress-bar1',
+    'background': '#808080',
+    'foreground': '#ffa500',
+    'complete': () => {
+      window.clearInterval(timer);
+    }
+  })
+  let progress_bar2 = new ProgressBar({
+    'type': 'hourglass',
+    'container': '#progress-bar2',
+    'background': '#808080',
+    'foreground': '#ffa500',
+    'complete': () => {
+      window.clearInterval(timer);
+    }
+  })
+  let progress_bar3 = new ProgressBar({
+    'type': 'bar',
+    'container': '#progress-bar3',
+    'background': '#808080',
+    'foreground': '#ffa500',
+    'complete': () => {
+      window.clearInterval(timer);
+    }
+  })
+  let progress_bar4 = new ProgressBar({
+    'type': 'hourglass',
+    'container': '#progress-bar4',
+    'background': '#808080',
+    'foreground': '#ffa500',
+    'complete': () => {
+      window.clearInterval(timer);
+    }
+  })
+  let progress_bar5 = new ProgressBar({
+    'type': 'ring',
+    'container': '#progress-bar5',
+    'background': '#808080',
+    'foreground': '#ffa500',
+    'complete': () => {
+      window.clearInterval(timer);
+      document.getElementById('truth').style.display = 'block';
+    }
+  })
+  // console.log(document.getElementById("type_ring"));
+  let current_progress = 0;
+  let timer = window.setInterval(() => {
+    console.log(current_progress);
+    progress_bar1.set_progress(current_progress);
+    progress_bar2.set_progress(current_progress);
+    progress_bar3.set_progress(current_progress);
+    progress_bar4.set_progress(current_progress);
+    progress_bar5.set_progress(current_progress);
+    current_progress += 10;
+  }, 500);
+</script>
